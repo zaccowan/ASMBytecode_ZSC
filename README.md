@@ -40,9 +40,11 @@ and then print the result. (gen9.java,program9.class)
 
 # Running the Generated Class Files
 
-1. Clone the repository
-2. Open a terminal in the root folder of the project (where the "program<#>.class files are).
-3. Use java command line to run desired class file.
+1. Clone the repository or download a specific set of the program<#>.class files from the root directory.
+   <br>
+    (you do not need to clone the entire repo to run the class files.)
+4. Open a terminal in the root folder of the project (where the "program<#>.class files are).
+5. Use java command line to run a desired class file.
    <br>
 ```console
 java program<#>.class
