@@ -8,6 +8,7 @@ import org.objectweb.asm.Opcodes;
  *      Two Integers: 10 * 5 = 50
  *      Two Longs: 13L * 2L = 26L
  *      Two Floats: 2.5F * 5.0F = 12.5F
+ *      Two Doubles: 5.5 * 5.0 = 0.5
  *
  *Bytecode generated with ASM. This particular generation does basic things with Java bytecode such as:
  *      Storing different primitive values

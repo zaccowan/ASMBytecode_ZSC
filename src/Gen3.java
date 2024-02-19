@@ -2,9 +2,30 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-
+/**
+ * <pre>
+ *Class and Application to generate class file that performs the division of:
+ *      Two Integers: 10 / 5 = 2
+ *      Two Longs: 13L / 2L = 6L
+ *      Two Floats: 2.5F / 5.0F = 0.5F
+ *      Two Doubles: 5.5 / 5.0 = 1.1
+ *
+ *Bytecode generated with ASM. This particular generation does basic things with Java bytecode such as:
+ *      Storing different primitive values
+ *      Dividing primitive values
+ *      Printing Primitive Values
+ * </pre>
+ *
+ * @author Zachary Cowan
+ * @version 02-10-2024
+ * Spring 2024
+ */
 public class Gen3 {
 
+    /**
+     * Application entry point.
+     * @param args arguments for main method
+     */
     public static void main(String [] args ) {
 
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);

@@ -2,9 +2,30 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-
+/**
+ * <pre>
+ *Class and Application to generate class file that performs the subtraction of:
+ *      Two Integers: 10 - 5 = 5
+ *      Two Longs: 13L - 2L = 11L
+ *      Two Floats: 7.5F - 5.0F = 2.5F
+ *      Two Doubles: 5.5 - 5.0 = 0.5
+ *
+ *Bytecode generated with ASM. This particular generation does basic things with Java bytecode such as:
+ *      Storing different primitive values
+ *      Subtracting primitive values
+ *      Printing Primitive Values
+ * </pre>
+ *
+ * @author Zachary Cowan
+ * @version 02-10-2024
+ * Spring 2024
+ */
 public class Gen2 {
 
+    /**
+     * Application entry point.
+     * @param args arguments for main method
+     */
     public static void main(String [] args ) {
 
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);

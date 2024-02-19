@@ -4,8 +4,30 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
 
+/**
+ * <pre>
+ *Class and Application to generate class file that does basic flow control using an if-else statement.
+ *In this particular implementation, the following conditional is used:  if( num1 == 1 ) {} else {}
+ *
+ *
+ *Bytecode generated with ASM. This particular generation does basic things with Java bytecode such as:
+ *      Storing primitive values
+ *      Using Integer Constants
+ *      Comparing primitive values of same type
+ *      Jump Instructions (Conditional Jumps Specifically)
+ *      Printing primitive values
+ * </pre>
+ *
+ * @author Zachary Cowan
+ * @version 02-10-2024
+ * Spring 2024
+ */
 public class Gen8 {
 
+    /**
+     * Application entry point.
+     * @param args arguments for main method
+     */
     public static void main(String [] args ) {
 
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
@@ -30,7 +52,7 @@ public class Gen8 {
 
             mv.visitLdcInsn((Integer) 1);
             mv.visitVarInsn(Opcodes.ISTORE, 1);
-            mv.visitLdcInsn((Integer) 1);
+            mv.visitLdcInsn(Opcodes.ICONST_1);
             mv.visitVarInsn(Opcodes.ISTORE, 3);
             mv.visitVarInsn(Opcodes.ILOAD, 1);
             mv.visitVarInsn(Opcodes.ILOAD, 3);

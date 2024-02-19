@@ -4,8 +4,31 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
 
+/**
+ * <pre>
+ *Class and Application to generate class file that prompts the user to enter an integer value, stores the value,
+ * and loop up to the value using a while / for loop. Each iteration of the loop prints the value.
+ *
+ *
+ *Bytecode generated with ASM. This particular generation does basic things with Java bytecode such as:
+ *      Getting user keyboard input using a scanner
+ *      Storing primitive values
+ *      Primitive Comparison
+ *      Jump Instructions
+ *      Loops
+ *      Printing primitive (Integer) and derived (String) type values
+ * </pre>
+ *
+ * @author Zachary Cowan
+ * @version 02-10-2024
+ * Spring 2024
+ */
 public class Gen9 {
 
+    /**
+     * Application entry point.
+     * @param args arguments for main method
+     */
     public static void main(String [] args ) {
 
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);

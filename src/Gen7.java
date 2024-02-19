@@ -4,8 +4,31 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
 
+/**
+ * <pre>
+ *Class and Application to generate class file that performs a simple while loop.
+ *In this specific implementation, the while loop prints a value i that is incremented every iteration until the value i reaches constant 4.
+ *This is semantically identical to a for loop.
+ *
+ *Bytecode generated with ASM. This particular generation does basic things with Java bytecode such as:
+ *      Storing primitive values
+ *      Using Integer Constants
+ *      Incrementing a value
+ *      Primitive Comparisons
+ *      Jump Instructions
+ *      Printing primitive values
+ * </pre>
+ *
+ * @author Zachary Cowan
+ * @version 02-10-2024
+ * Spring 2024
+ */
 public class Gen7 {
 
+    /**
+     * Application entry point.
+     * @param args arguments for main method
+     */
     public static void main(String [] args ) {
 
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);

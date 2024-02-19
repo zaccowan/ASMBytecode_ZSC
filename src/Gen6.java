@@ -3,8 +3,26 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
 
+/**
+ * <pre>
+ *Class and Application to generate class file that performs the prompts the user to enter a specified primitive value and print the entered value.
+ *
+ *Bytecode generated with ASM. This particular generation does basic things with Java bytecode such as:
+ *      Getting user keyboard input with a Scanner
+ *      Storing primitive values entered by user
+ *      Printing primitive values
+ * </pre>
+ *
+ * @author Zachary Cowan
+ * @version 02-10-2024
+ * Spring 2024
+ */
 public class Gen6 {
 
+    /**
+     * Application entry point.
+     * @param args arguments for main method
+     */
     public static void main(String [] args ) {
 
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
