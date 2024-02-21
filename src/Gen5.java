@@ -39,7 +39,7 @@ public class Gen5 {
             mv.visitEnd();
         }
 
-        {
+        {   // Storing String Type and Printing Store value
             MethodVisitor mv=cw.visitMethod(Opcodes.ACC_PUBLIC+Opcodes.ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
             mv.visitCode();
 
