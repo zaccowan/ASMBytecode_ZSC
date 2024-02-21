@@ -43,25 +43,32 @@ public class Gen8 {
             mv.visitEnd();
         }
 
-        {
+        {   // Implements an conditional
             MethodVisitor mv=cw.visitMethod(Opcodes.ACC_PUBLIC+Opcodes.ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
             mv.visitCode();
 
             Label elseLabel = new Label();
             Label endLabel = new Label();
 
+            // Value to check in if statement
             mv.visitLdcInsn((Integer) 1);
             mv.visitVarInsn(Opcodes.ISTORE, 1);
+            // constant value, 1, to compare variable to
             mv.visitLdcInsn(Opcodes.ICONST_1);
             mv.visitVarInsn(Opcodes.ISTORE, 3);
+            
             mv.visitVarInsn(Opcodes.ILOAD, 1);
             mv.visitVarInsn(Opcodes.ILOAD, 3);
+
+            // if( variable == constant ) { print "X is 1" }
+            // else we jump to else label
             mv.visitJumpInsn(Opcodes.IF_ICMPNE, elseLabel);
             mv.visitFieldInsn(Opcodes.GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
             mv.visitLdcInsn("X is 1");
             mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
             mv.visitJumpInsn(Opcodes.GOTO, endLabel);
 
+            // else { print "X is not 1" }
             mv.visitLabel(elseLabel);
             mv.visitFieldInsn(Opcodes.GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
             mv.visitLdcInsn("X is not 1");
