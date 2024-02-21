@@ -73,7 +73,7 @@ public class Gen4 {
                 mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "java/io/PrintStream", "println", "(I)V", false);
             }
 
-            {   // Comparing Two Integer Values and Printing the Greater
+            {   // Comparing Two Short Values and Printing the Greater
                 Label elseLabel = new Label();
                 Label endLabel = new Label();
 
