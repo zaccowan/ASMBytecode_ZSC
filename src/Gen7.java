@@ -44,21 +44,26 @@ public class Gen7 {
             mv.visitEnd();
         }
 
-        {
+        {   // While loop starting at 0 and looping until counter reaches 5
             MethodVisitor mv=cw.visitMethod(Opcodes.ACC_PUBLIC+Opcodes.ACC_STATIC, "main", "([Ljava/lang/String;)V", null, null);
             mv.visitCode();
 
             Label endLabel = new Label();
             Label whileStartLabel = new Label();
 
+            // Start value for loop = 0
             mv.visitInsn(Opcodes.ICONST_0);
             mv.visitVarInsn(Opcodes.ISTORE, 1);
             mv.visitLabel(whileStartLabel);
             mv.visitVarInsn(Opcodes.ILOAD, 1);
 
+            // Max limit for loop = 5
             mv.visitInsn(Opcodes.ICONST_5);
+            // if counter is greater than or equal to the max, jump to end
+            // ends the while loop
             mv.visitJumpInsn(Opcodes.IF_ICMPGE, endLabel);
 
+            // Prints the current counter state
             mv.visitFieldInsn(Opcodes.GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
             mv.visitVarInsn(Opcodes.ILOAD, 1);
             mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "java/io/PrintStream", "println", "(I)V", false);
